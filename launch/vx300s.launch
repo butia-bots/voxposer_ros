@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find voxposer_ros)/launch/realsense.launch">
+    </include>
+    <!--param name="vx300s/robot_description" command="xacro $(find interbotix_xsarm_descriptions)/urdf/vx300s.urdf.xacro"/-->
+    <include file="$(find interbotix_xsarm_moveit)/launch/xsarm_moveit.launch">
+        <arg name="dof" value="6"/>
+        <arg name="robot_model" value="vx300s"/>
+        <arg name="use_actual" value="false"/>
+        <arg name="use_fake" value="false"/>
+        <arg name="use_gazebo" value="true"/>
+        <arg name="start_sim" value="true"/>
+        <arg name="paused" value="false"/>
+    </include>
+    <include file="$(find voxposer_ros)/launch/robot_filter.launch">
+    </include>
+</launch>

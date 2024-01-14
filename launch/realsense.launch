@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+    <param name="camera_description" command="xacro $(find voxposer_ros)/urdf/realsense_fixed.urdf.xacro"/>
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen">
+        <remap from="robot_description" to="camera_description"/>
+    </node>
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param camera_description -urdf -model realsense" />
+    <include file="$(find hector_sensors_description)/launch/realsense_d435_camera_static_transforms.launch">
+            <arg name="camera_name" value="camera"/>
+    </include>
+</launch>

@@ -1,0 +1,8 @@
+arm_move_group: interbotix_arm
+gripper_move_group: interbotix_gripper
+move_group_ns: "/vx300s"
+robot_description: "/vx300s/robot_description"
+arm_group_reference_frame: "/vx300s/base_link"
+workspace_bounds_min: [0.0, -1.0, 0.0]
+workspace_bounds_max: [1.0, 1.0, 1.0]
+full_scene_cloud_topic: "/camera/depth/points_filtered"

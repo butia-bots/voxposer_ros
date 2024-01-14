@@ -6,6 +6,7 @@ import time
 from scipy.ndimage import distance_transform_edt
 import transforms3d
 from controllers import Controller
+from envs.ros_env import VoxPoserROS
 
 # creating some aliases for end effector and table in case LLMs refer to them differently (but rarely this happens)
 EE_ALIAS = ['ee', 'endeffector', 'end_effector', 'end effector', 'gripper', 'hand']
@@ -43,7 +44,7 @@ class LMP_interface():
       obs_dict['position'] = self.get_ee_pos()
       obs_dict['aabb'] = np.array([self.get_ee_pos(), self.get_ee_pos()])
       obs_dict['_position_world'] = self._env.get_ee_pos()
-    elif obj_name.lower() in TABLE_ALIAS:
+    elif obj_name.lower() in TABLE_ALIAS and not isinstance(self._env, VoxPoserROS):
       offset_percentage = 0.1
       x_min = self._env.workspace_bounds_min[0] + offset_percentage * (self._env.workspace_bounds_max[0] - self._env.workspace_bounds_min[0])
       x_max = self._env.workspace_bounds_max[0] - offset_percentage * (self._env.workspace_bounds_max[0] - self._env.workspace_bounds_min[0])

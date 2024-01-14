@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="voxposer_ros" type="voxposer_ros_node.py" name="voxposer_ros_node" output="screen">
+        <rosparam file="$(find voxposer_ros)/config/vx300s.yaml" command="load"/>
+    </node>
+</launch>

@@ -1,0 +1,60 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/cris/butia_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/home/cris/butia_ws/src/bio_ik/include/**",
+        "/home/cris/butia_ws/src/butia_vision/butia_recognition/include/**",
+        "/home/cris/butia_ws/src/butia_speech/include/**",
+        "/home/cris/butia_ws/src/butia_vision/butia_vision_bridge/include/**",
+        "/home/cris/butia_ws/src/doris_moveit_plugins/doris_kinematics_plugin/include/**",
+        "/home/cris/butia_ws/src/interbotix_ros_core/interbotix_ros_xseries/dynamixel_workbench_toolbox/include/**",
+        "/home/cris/butia_ws/src/humanoid_navigation/footstep_planner/include/**",
+        "/home/cris/butia_ws/src/rosdeps/panda_gazebo/franka_ros/franka_control/include/**",
+        "/home/cris/butia_ws/src/rosdeps/panda_gazebo/franka_ros/franka_example_controllers/include/**",
+        "/home/cris/butia_ws/src/rosdeps/panda_gazebo/franka_ros/franka_gazebo/include/**",
+        "/home/cris/butia_ws/src/rosdeps/panda_gazebo/franka_ros/franka_gripper/include/**",
+        "/home/cris/butia_ws/src/rosdeps/panda_gazebo/franka_ros/franka_hw/include/**",
+        "/home/cris/butia_ws/src/humanoid_navigation/gridmap_2d/include/**",
+        "/home/cris/butia_ws/src/humanoid_navigation/humanoid_planner_2d/include/**",
+        "/home/cris/butia_ws/src/interbotix_ros_toolboxes/interbotix_common_toolbox/interbotix_moveit_interface/include/**",
+        "/home/cris/butia_ws/src/interbotix_ros_toolboxes/interbotix_common_toolbox/interbotix_tf_tools/include/**",
+        "/home/cris/butia_ws/src/interbotix_ros_toolboxes/interbotix_xs_toolbox/interbotix_xs_ros_control/include/**",
+        "/home/cris/butia_ws/src/interbotix_ros_toolboxes/interbotix_xs_toolbox/interbotix_xs_rviz/include/**",
+        "/home/cris/butia_ws/src/interbotix_ros_core/interbotix_ros_xseries/interbotix_xs_sdk/include/**",
+        "/home/cris/butia_ws/src/interbotix_ros_manipulators/interbotix_ros_xsarms/examples/interbotix_xsarm_pid/include/**",
+        "/home/cris/butia_ws/src/create3_sim/irobot_create_gazebo/irobot_create_gazebo_plugins/include/**",
+        "/home/cris/butia_ws/src/create3_sim/irobot_create_ignition/irobot_create_ignition_toolbox/include/**",
+        "/home/cris/butia_ws/src/create3_sim/irobot_create_common/irobot_create_nodes/include/**",
+        "/home/cris/butia_ws/src/create3_sim/irobot_create_common/irobot_create_toolbox/include/**",
+        "/home/cris/butia_ws/src/kindr/include/**",
+        "/home/cris/butia_ws/src/spot_mini_mini/mini_ros/include/**",
+        "/home/cris/butia_ws/src/moveit_task_constructor/core/include/**",
+        "/home/cris/butia_ws/src/moveit_task_constructor/demo/include/**",
+        "/home/cris/butia_ws/src/occupancy_grid_utils/include/**",
+        "/home/cris/butia_ws/src/open_manipulator_dependencies/roboticsgroup_gazebo_plugins/include/**",
+        "/home/cris/butia_ws/src/roboticsgroup_upatras_gazebo_plugins/include/**",
+        "/home/cris/butia_ws/src/ros_openpose/include/**",
+        "/home/cris/butia_ws/src/rosplan_demos/rosplan_demos_interfaces/rosplan_interface_mapping/include/**",
+        "/home/cris/butia_ws/src/rosplan_demos/rosplan_demos_interfaces/rosplan_interface_movebase/include/**",
+        "/home/cris/butia_ws/src/rosplan/rosplan_knowledge_base/include/**",
+        "/home/cris/butia_ws/src/rosplan/rosplan_planning_system/include/**",
+        "/home/cris/butia_ws/src/moveit_task_constructor/rviz_marker_tools/include/**",
+        "/home/cris/butia_ws/src/turtlebot3_manipulation/turtlebot3_manipulation_bringup/include/**",
+        "/home/cris/butia_ws/src/yocs_velocity_smoother/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find butia_recognition)/launch/yolov8_object_recognition.launch">
+        <arg name="output" value="log"/>
+        <arg name="use_machine" value="false"/>
+        <arg name="machine" value=""/>
+        <arg name="config_file" value="fast-sam.yaml"/>
+    </include>
+</launch>

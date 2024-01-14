@@ -1,7 +1,7 @@
 
 import openai
 from time import sleep
-from openai.error import RateLimitError, APIConnectionError
+from openai import RateLimitError, APIConnectionError
 from pygments import highlight
 from pygments.lexers import PythonLexer
 from pygments.formatters import TerminalFormatter
@@ -22,6 +22,7 @@ class LMP:
         self.exec_hist = ''
         self._context = None
         self._cache = DiskCache(load_cache=self._cfg['load_cache'])
+        self._openai_connection = openai.OpenAI()
 
     def clear_exec_hist(self):
         self.exec_hist = ''
@@ -49,8 +50,7 @@ class LMP:
     
     def _cached_api_call(self, **kwargs):
         # check whether completion endpoint or chat endpoint is used
-        if kwargs['model'] != 'gpt-3.5-turbo-instruct' and \
-            any([chat_model in kwargs['model'] for chat_model in ['gpt-3.5', 'gpt-4']]):
+        if kwargs['model'] != 'gpt-3.5-turbo-instruct':
             # add special prompt for chat endpoint
             user1 = kwargs.pop('prompt')
             new_query = '# Query:' + user1.split('# Query:')[-1]
@@ -76,7 +76,7 @@ class LMP:
                 print('(using cache)', end=' ')
                 return self._cache[kwargs]
             else:
-                ret = openai.ChatCompletion.create(**kwargs)['choices'][0]['message']['content']
+                ret = self._openai_connection.chat.completions.create(**kwargs).choices[0].message.content
                 # post processing
                 ret = ret.replace('```', '').replace('python', '').strip()
                 self._cache[kwargs] = ret
@@ -86,7 +86,7 @@ class LMP:
                 print('(using cache)', end=' ')
                 return self._cache[kwargs]
             else:
-                ret = openai.Completion.create(**kwargs)['choices'][0]['text'].strip()
+                ret = self._openai_connection.completions.create(**kwargs).choices[0].text.strip()
                 self._cache[kwargs] = ret
                 return ret
 
